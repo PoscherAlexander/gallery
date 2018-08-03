@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:600');
 
+#content {
+	display: none;
+}
+
 /* HEADING */
 .ph-background-heading h1,
 .ph-background-heading h2,

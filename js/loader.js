@@ -1,7 +1,11 @@
+function LoadAlbumData()
+{
+
+}
+
 function LoadImages()
 {
     var xmlhttp;
-    var url;
 
     if (window.XMLHttpRequest)
     {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -18,6 +22,7 @@ function LoadImages()
         {           
             document.getElementById("photoarea").innerHTML=xmlhttp.responseText;
             $('.imageLoader').fadeOut('slow');
+            document.getElementById('content').style.display = 'block';
         }
     }
 
@@ -28,7 +33,6 @@ function LoadImages()
 function LoadAlbums()
 {
     var xmlhttp;
-    var url;
 
     if (window.XMLHttpRequest)
     {// code for IE7+, Firefox, Chrome, Opera, Safari
@@ -45,6 +49,7 @@ function LoadAlbums()
         {
             document.getElementById("albumcollection").innerHTML=xmlhttp.responseText;
             $('.albumLoader').fadeOut('slow');
+            document.getElementById('content').style.display = 'block';
         }
     }
 
