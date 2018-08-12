@@ -23,11 +23,12 @@ class Album {
     public function getErrorMessage() { return $this->errorMessage; }
     public function setErrorMessage($errorMessage) { $this->errorMessage = $errorMessage; }
 
-    public function __construct($files)
+    public function __construct($files = '')
     {
-        foreach($files as $file)
-        {
-            if($this->isFile($file) && in_array(strtolower($this->getFileExtension($file)), $this->validExtensions)) $this->files[] = $file;
+        if($files !== '') {
+            foreach ($files as $file) {
+                if ($this->isFile($file) && in_array(strtolower($this->getFileExtension($file)), $this->validExtensions)) $this->files[] = $file;
+            }
         }
     }
 
@@ -49,8 +50,7 @@ class Album {
                 echo ' <a class="uk-inline" href="images/' . $image->getFileName() . '" data-caption="' . $image->getName() . '">
 							<div class="uk-background-cover uk-panel uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-margin" style="background-image: url(thumbnails/' . $image->getFileName() . ');">
 							</div>
-						</a>
-                    ';
+						</a>';
                 /*echo '<a class="uk-inline" href="images/' . $image->getFileName() . '" data-caption="' . $image->getName() . '">
                         <img src="thumbnails/' . $image->getFileName() . '" alt="">
                       </a>';*/

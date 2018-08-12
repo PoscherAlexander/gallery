@@ -64,3 +64,9 @@
 .uk-card {
 	box-shadow: 0 8px 19px rgba(0, 0, 0, 0.16);
 }
+
+/* HEIGHT */
+.ph-height-medium
+{
+	height: 350px;
+}

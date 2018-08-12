@@ -20,7 +20,7 @@ class Gallery {
     {
         foreach($this->albums as $album)
         {
-            echo '<a class="ph-card-no-underline" href="albums/' . $album->getPath() . '/">
+            /*echo '<a class="ph-card-no-underline" href="albums/' . $album->getPath() . '/?n=' . str_replace(' ', '$', $album->getName()) . '&t=' . str_replace(' ', '$', $album->getThumbnail()) . '">
 					<div>
 						<div class="uk-card uk-card-hover">
 							<div class="uk-card-media-top">
@@ -33,7 +33,16 @@ class Gallery {
 							</div>
 						</div>
 					</div>
-				</a>';
+				</a>';*/
+            echo ' <a class="uk-inline" href="albums/' . $album->getPath() . '/?n=' . str_replace(' ', '$', $album->getName()) . '&t=' . str_replace(' ', '$', $album->getThumbnail()) . '">
+                            <div class="uk-card uk-card-hover">
+                                <div class="uk-background-cover uk-panel ph-height-medium uk-flex uk-flex-center uk-flex-middle uk-margin" style="background-image: url(albums/' . $album->getPath() . '/thumbnails/' . $album->getThumbnail() . ');">
+                                    <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+										<h2><span class="uk-margin-small-right" uk-icon="icon: album; ratio: 1.7;"></span> ' . $album->getName() . '</h2>
+									</div>
+                                </div>
+							</div>
+						</a>';
         }
     }
 

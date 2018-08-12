@@ -1,5 +1,6 @@
 <?php
-include 'Controller.inc.php';
+include '../../php/GetAlbumData.inc.php';
+$a = InitAlbum(str_replace('$',' ', $_GET['n']), str_replace('$',' ', $_GET['t']));
 error_reporting(E_ALL);
 ?>
 <!DOCTYPE html>
@@ -9,7 +10,7 @@ error_reporting(E_ALL);
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.poscher.me/uikit/3.0.0/css/uikit.min.css" />
-        <link rel="stylesheet" href="../../css/photos.css" />
+        <link rel="stylesheet" href="../../css/images.css" />
         <link rel="stylesheet" href="../../css/flex.css" />
         <script src="https://cdn.poscher.me/uikit/3.0.0/js/uikit.min.js"></script>
 		<script src="https://cdn.poscher.me/uikit/3.0.0/js/uikit-icons.min.js"></script>
@@ -32,18 +33,18 @@ error_reporting(E_ALL);
 			<div class="uk-flex uk-flex-middle uk-flex-center" uk-height-viewport>
 				<div class="container uk-text-center">
 					<span uk-spinner="ratio: 6"></span>
-					<h3>Images are being prepared...</h3>
+					<h3>Hang on...</h3>
 				</div>
 			</div>
 		</div>
 
         <div id="content">
             <header>
-                <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading" style="background-image: url(../../img/ownidea.jpg);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
+                <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading" style="background-image: url(<?php echo 'images/' . $a->getThumbnail(); ?>);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
                     <a class="ph-nav-button ph-a-no-underline" type="button" href="../../#albums"><span uk-icon="icon: chevron-left; ratio: 1.5"></span> ALBUMS</a>
                     <div class="ph-header-border">
                         <div class="uk-container">
-                            <h1 class="ph-heading-header uk-text-center h-bold" id="albumname">Album Template</h1>
+                            <h1 class="ph-heading-header uk-text-center h-bold" id="albumname"><?php echo $a->getName(); ?></h1>
                         </div>
                     </div>
                 </div>
@@ -62,7 +63,6 @@ error_reporting(E_ALL);
                 </div>
             </section>
             -->
-
             <section class="uk-align-center uk-text-center uk-margin-medium-bottom">
                 <a class="uk-text-center uk-heading-primary" href="#" uk-totop uk-scroll></a>
             </section>
