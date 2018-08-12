@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90aedcc-4e0b-45b3-aab7-4c478b97edf9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/php/GetAlbumData.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albums/albumtemplate/Controller.inc.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/albums/albumtemplate/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/albums/albumtemplate/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/albums.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/albums.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/photos.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/images.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Album.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Album.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Gallery.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Gallery.class.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller Concept.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/php/Gallery.class.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="408">
-              <caret line="39" column="96" lean-forward="true" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
+              <caret line="39" column="96" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -128,8 +121,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/albums/albumtemplate/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+            <state relative-caret-position="374">
+              <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -295,12 +288,12 @@
       <workItem from="1533319495025" duration="2833000" />
       <workItem from="1534065061398" duration="942000" />
       <workItem from="1534075687297" duration="394000" />
-      <workItem from="1534089713800" duration="3324000" />
+      <workItem from="1534089713800" duration="3784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31481000" />
+    <option name="totallyTimeSpent" value="31941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -438,7 +431,7 @@
     <entry file="file://$PROJECT_DIR$/php/Gallery.class.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
-          <caret line="39" column="96" lean-forward="true" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
+          <caret line="39" column="96" selection-start-line="39" selection-start-column="96" selection-end-line="39" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -451,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/albums/albumtemplate/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+        <state relative-caret-position="374">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
         </state>
       </provider>
     </entry>
