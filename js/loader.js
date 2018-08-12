@@ -26,7 +26,7 @@ function LoadImages()
         }
     }
 
-    xmlhttp.open('POST','getimages.php',true);
+    xmlhttp.open('POST','GetImages.inc.php',true);
     xmlhttp.send();
 }
 
