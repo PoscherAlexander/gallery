@@ -34,7 +34,7 @@ class Gallery {
 						</div>
 					</div>
 				</a>';*/
-            echo ' <a class="uk-inline" href="albums/' . $album->getPath() . '/?n=' . str_replace(' ', '$', $album->getName()) . '&t=' . str_replace(' ', '$', $album->getThumbnail()) . '">
+            echo ' <a class="uk-inline" href="albums/' . $album->getPath() . '">
                             <div class="uk-card uk-card-hover">
                                 <div class="uk-background-cover uk-panel ph-height-medium uk-flex uk-flex-center uk-flex-middle uk-margin" style="background-image: url(albums/' . $album->getPath() . '/thumbnails/' . $album->getThumbnail() . ');">
                                     <div class="uk-overlay uk-overlay-primary uk-position-bottom">
@@ -50,7 +50,7 @@ class Gallery {
     {
         foreach($this->albumArray as $albumText)
         {
-            $this->albums[] = Album::LoadAlbum($albumText);
+            $this->albums[] = Album::LoadAlbum(file_get_contents('../albums/' . $albumText . '/properties.bin'));
         }
     }
 }

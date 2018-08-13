@@ -1,10 +1,7 @@
 <?php
 include '../../php/Album.class.php';
-function InitAlbum($name, $thumbnail)
+function InitAlbum()
 {
-    $a = new Album();
-    $a->setName($name);
-    $a->setThumbnail($thumbnail);
-    return $a;
+    return Album::LoadAlbum(file_get_contents('properties.bin'));
 }
 ?>

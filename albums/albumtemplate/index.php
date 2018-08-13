@@ -1,7 +1,7 @@
 <?php
 include '../../php/GetAlbumData.inc.php';
-$a = InitAlbum(str_replace('$',' ', $_GET['n']), str_replace('$',' ', $_GET['t']));
 error_reporting(E_ALL);
+$a = InitAlbum();
 ?>
 <!DOCTYPE html>
 <html>

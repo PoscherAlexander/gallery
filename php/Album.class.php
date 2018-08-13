@@ -61,9 +61,9 @@ class Album {
         }
     }
 
-    public static function LoadAlbum($path)
+    public static function LoadAlbum($data)
     {
-         return unserialize(file_get_contents('../albums/' . $path . '/properties.bin'));
+         return unserialize($data);
     }
 
     private function checkImageArray()

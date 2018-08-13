@@ -1,6 +1,8 @@
 <?php
+ini_set('memory_limit', '-1');
 function makeThumbnail($src, $dest, $desired_width) {
     set_error_handler('memoryErrorHandler');
+    ini_set('memory_limit', '-1');
     try {
         set_time_limit(0);
         if (!file_exists($dest)) {
