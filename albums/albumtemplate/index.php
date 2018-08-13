@@ -50,11 +50,21 @@ $a = InitAlbum();
                 </div>
             </header>
 
+            <section class="uk-section">
+                <div class="uk-container uk-container-expand">
+                    <div class="uk-grid uk-grid-small uk-child-width-1-2 uk-child-width-1-3@m uk-child-width-1-4@l uk-grid-match" data-uk-lightbox="toggle:a.uk-position-cover" id="photoarea" data-uk-grid uk-grid="masonry: true">
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- First Design
             <section class="uk-margin-medium uk-margin-medium-left uk-margin-medium-right">
-                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-lightbox="animation: slide" id="photoarea"  uk-grid>
+                <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-3@m" uk-lightbox="animation: slide" id="photoarea" uk-grid>
 
                 </div>
             </section>
+            -->
 
             <!-- FLEXBIN GOOGLE IMAGE SEARCH
             <section class=" uk-margin-medium-top uk-margin-medium-right">

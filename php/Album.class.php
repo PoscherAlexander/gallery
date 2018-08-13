@@ -47,13 +47,51 @@ class Album {
 
         if($check == 0) {
             foreach ($this->images as $image) {
-                echo ' <a class="uk-inline" href="images/' . $image->getFileName() . '" data-caption="' . $image->getName() . '">
+                /*echo ' <a class="uk-inline" href="images/' . $image->getFileName() . '" data-caption="' . $image->getName() . '">
 							<div class="uk-background-cover uk-panel uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-margin" style="background-image: url(thumbnails/' . $image->getFileName() . ');">
 							</div>
-						</a>';
+						</a>';*/
                 /*echo '<a class="uk-inline" href="images/' . $image->getFileName() . '" data-caption="' . $image->getName() . '">
                         <img src="thumbnails/' . $image->getFileName() . '" alt="">
                       </a>';*/
+                echo '<div>
+							<div class="uk-card uk-card-default uk-card-small">
+								<div class="uk-card-media-top">
+									<div class="uk-inline-clip uk-transition-toggle uk-light">
+										<img src="thumbnails/' . $image->getFileName() . '">
+										<div class="uk-transition-fade uk-position-cover uk-overlay uk-overlay-primary uk-flex uk-flex-center uk-flex-middle">
+											<div data-uk-margin class="uk-transition-slide-bottom-small">
+												<span data-uk-icon="icon: plus; ratio: 1.3"></span>
+											</div>
+										</div>
+										<a data-caption="' . $image->getName() . '" href="images/' . $image->getFileName() . '" class="uk-position-cover"></a>
+									</div>
+									
+								</div>
+								<!--<div class="uk-card-header">
+									<div class="uk-grid-small uk-flex uk-flex-middle" data-uk-grid>
+										<div class="uk-width-expand">
+											<p class="uk-text-meta uk-margin-remove"><time datetime="2016-04-01T19:00">Taken: April 01, 2016</time></p>
+										</div>
+										<div class="uk-width-auto">
+											<div class="uk-inline">
+												<a data-uk-icon="icon:more-vertical"></a>
+												<div data-uk-dropdown="mode: click; pos:top-right">
+													<ul class="uk-nav uk-dropdown-nav">
+														<li class="uk-nav-header">Share your image</li>
+														<li><a href="#"><span data-uk-icon="icon: facebook; ratio: 0.9"></span> Facebook</a></li>
+														<li><a href="#"><span data-uk-icon="icon: twitter; ratio: 0.9"></span> Twitter</a></li>
+														<li><a href="#"><span data-uk-icon="icon: instagram; ratio: 0.9"></span> Instagram</a></li>
+														<li><a href="#"><span data-uk-icon="icon: behance; ratio: 0.9"></span> Behance</a></li>
+													</ul>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>-->
+							</div>
+						</div>';
             }
         }
         else {

@@ -4,11 +4,7 @@
     <list default="true" id="e90aedcc-4e0b-45b3-aab7-4c478b97edf9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/albums/albumtemplate/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/albums/albumtemplate/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albums/albumtemplate/properties.bin" beforeDir="false" afterPath="$PROJECT_DIR$/albums/albumtemplate/properties.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/php/Album.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Album.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Gallery.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Gallery.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/GetAlbumData.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/GetAlbumData.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Thumbnail.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Thumbnail.inc.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,15 +30,16 @@
     <session id="656305992">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -50,7 +47,7 @@
           <entry key="css" value="83" />
           <entry key="dummy" value="5" />
           <entry key="js" value="223" />
-          <entry key="php" value="3149" />
+          <entry key="php" value="3332" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -58,7 +55,7 @@
           <entry key="CSS" value="83" />
           <entry key="HTML" value="7" />
           <entry key="JavaScript" value="223" />
-          <entry key="PHP" value="3142" />
+          <entry key="PHP" value="3325" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -92,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/Album.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+            <state relative-caret-position="864">
+              <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -128,7 +125,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/albums/albumtemplate/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="153">
               <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
             </state>
           </provider>
@@ -172,10 +169,10 @@
         <option value="$PROJECT_DIR$/albums/albumtemplate/Controller.inc.php" />
         <option value="$PROJECT_DIR$/css/albums.css" />
         <option value="$PROJECT_DIR$/php/Thumbnail.inc.php" />
-        <option value="$PROJECT_DIR$/php/Album.class.php" />
         <option value="$PROJECT_DIR$/php/Gallery.class.php" />
-        <option value="$PROJECT_DIR$/albums/albumtemplate/index.php" />
         <option value="$PROJECT_DIR$/php/GetAlbumData.inc.php" />
+        <option value="$PROJECT_DIR$/php/Album.class.php" />
+        <option value="$PROJECT_DIR$/albums/albumtemplate/index.php" />
       </list>
     </option>
   </component>
@@ -233,24 +230,6 @@
               <item name="gallery" type="462c0819:PsiDirectoryNode" />
               <item name="php" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="ven" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="ven" type="462c0819:PsiDirectoryNode" />
-              <item name="uikit" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gallery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gallery" type="462c0819:PsiDirectoryNode" />
-              <item name="ven" type="462c0819:PsiDirectoryNode" />
-              <item name="uikit" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -306,11 +285,12 @@
       <workItem from="1534075687297" duration="394000" />
       <workItem from="1534089713800" duration="4380000" />
       <workItem from="1534170271867" duration="2092000" />
+      <workItem from="1534174170451" duration="3567000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34629000" />
+    <option name="totallyTimeSpent" value="38196000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -324,7 +304,7 @@
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25702536" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26045236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -409,27 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/Image.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/albums.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/Thumbnail.inc.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -437,10 +396,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/Album.class.php">
+    <entry file="file://$PROJECT_DIR$/php/Image.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="65" column="33" selection-start-line="65" selection-start-column="33" selection-end-line="65" selection-end-column="33" />
+        <state relative-caret-position="340">
+          <caret line="20" column="69" selection-start-line="20" selection-start-column="69" selection-end-line="20" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/albums.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="17" selection-start-line="70" selection-start-column="17" selection-end-line="70" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -458,9 +424,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Album.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="864">
+          <caret line="91" column="41" selection-start-line="91" selection-start-column="41" selection-end-line="91" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/albums/albumtemplate/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="153">
           <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
         </state>
       </provider>
