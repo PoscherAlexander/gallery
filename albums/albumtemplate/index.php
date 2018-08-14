@@ -10,6 +10,7 @@ $a = InitAlbum();
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.poscher.me/uikit/3.0.0/css/uikit.min.css" />
+        <link rel="stylesheet" href="../../css/main.css" />
         <link rel="stylesheet" href="../../css/images.css" />
         <link rel="stylesheet" href="../../css/flex.css" />
         <script src="https://cdn.poscher.me/uikit/3.0.0/js/uikit.min.js"></script>
@@ -41,7 +42,24 @@ $a = InitAlbum();
         <div id="content">
             <header>
                 <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading" style="background-image: url(<?php echo 'images/' . $a->getThumbnail(); ?>);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
-                    <a class="ph-nav-button ph-a-no-underline" type="button" href="../../#albums"><span uk-icon="icon: chevron-left; ratio: 1.5"></span> ALBUMS</a>
+
+                    <!-- NAV -->
+                    <div class="uk-position-top">
+                        <nav class="uk-navbar-container uk-navbar-transparent ph-text-white" data-uk-navbar>
+                            <div class="uk-navbar-left">
+                                <div class="uk-navbar-item">
+                                    <a class="uk-logo ph-text-white" href=""><a class="ph-nav-button ph-a-no-underline" href="../../#albums"><span data-uk-icon="icon: chevron-left; ratio: 1.3;"></span> ALBUMS</a>
+                                </div>
+                            </div>
+                            <div class="uk-navbar-right">
+                                <div class="uk-navbar-item">
+                                    <a class="uk-logo ph-text-white" href=""><a class="ph-nav-button ph-a-no-underline" href=""><span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGIN</a>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                    <!-- /NAV -->
+
                     <div class="ph-header-border">
                         <div class="uk-container">
                             <h1 class="ph-heading-header uk-text-center h-bold" id="albumname"><?php echo $a->getName(); ?></h1>

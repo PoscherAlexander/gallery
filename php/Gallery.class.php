@@ -44,6 +44,19 @@ class Gallery {
 							</div>
 						</a>';
         }
+
+        echo '<a class="uk-inline" href="#">
+                        <div class="uk-card uk-card-hover ph-height-medium" id="newAlbum">
+                            <div class="uk-card-body">
+                                <div class="uk-position-center">
+                                    <p class="uk-text-muted" data-uk-icon="icon: album; ratio: 4;"></p>
+                                </div>
+                                <div class="uk-overlay uk-overlay-primary uk-position-bottom">
+										<h2><span class="uk-margin-small-right" uk-icon="icon: plus; ratio: 1.7;"></span> New Album</h2>
+									</div>
+                            </div>
+                        </div>
+                    </a>';
     }
 
     private function prepareAlbums()

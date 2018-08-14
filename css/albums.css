@@ -1,72 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:600');
-
-#content {
-	display: none;
-}
-
-/* HEADING */
-.ph-background-heading h1,
-.ph-background-heading h2,
-.ph-background-heading h3,
-.ph-background-heading h4,
-.ph-background-heading h5,
-.ph-background-heading h6 {
-	color: white;
-	font-family: 'Raleway';
-	margin-top: 0;
-}
-
-.ph-heading-header {
-	font-size: 60pt;
-	text-shadow: 4px 4px 10px rgba(0, 0, 0, .7);
-}
-@media (max-width: 960px)
-{
-	.ph-heading-header {
-	font-size: 35pt;
-	}
-}
-
-/* BUTTON */
-.ph-button-white {
-	background: white;
-	color: black;
-}
-.ph-button-white:hover {
-	background: #eee;
-}
-
-.ph-button-white-linked:hover {
-	color: black;
-}
-.ph-button-white-linked:active {
-	color: black;
-}
-
-/* A */
-.ph-card-no-underline:link {
-    text-decoration: none;
-}
-
-.ph-card-no-underline:visited {
-    text-decoration: none;
-}
-
-.ph-card-no-underline:hover {
-    text-decoration: none;
-}
-
-.ph-card-no-underline:active {
-    text-decoration: none;
-}
-
-/* CARD */
-.uk-card {
-	box-shadow: 0 8px 19px rgba(0, 0, 0, 0.16);
-}
-
 /* HEIGHT */
 .ph-height-medium
 {
 	height: 350px;
+}
+
+/* ALBUM */
+#newAlbum:hover p {
+	color: black !important;
+	transition: 0.3s ease-in-out;
+	transition-property: color, background-color, border-color;
 }
