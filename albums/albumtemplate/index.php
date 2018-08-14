@@ -6,7 +6,7 @@ $a = InitAlbum();
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo $a->getName(); ?></title>
+        <title>Album Template</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.poscher.me/uikit/3.0.0/css/uikit.min.css" />
@@ -41,7 +41,7 @@ $a = InitAlbum();
 
         <div id="content">
             <header>
-                <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading uk-inline" style="background-image: url(<?php echo 'images/' . $a->getThumbnail(); ?>);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
+                <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading" style="background-image: url(<?php echo 'images/' . $a->getThumbnail(); ?>);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
 
                     <!-- NAV -->
                     <div class="uk-position-top">
@@ -64,17 +64,6 @@ $a = InitAlbum();
                         <div class="uk-container">
                             <h1 class="ph-heading-header uk-text-center h-bold" id="albumname"><?php echo $a->getName(); ?></h1>
                         </div>
-                    </div>
-
-                    <div class="uk-position-bottom-center">
-                        <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
-                            <div class="uk-navbar-left">
-                                <div class="uk-margin uk-align-center uk-text-center">
-                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked uk-visible@s" href="#albums" uk-scroll><span data-uk-icon="icon: plus; ratio: 1;"></span> ADD PICTURES</a>
-                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked uk-hidden@s" href="#albums" uk-scroll><span data-uk-icon="icon: pencil; ratio: 1;"></span> EDIT</a>
-                                </div>
-                            </div>
-                        </nav>
                     </div>
                 </div>
             </header>
