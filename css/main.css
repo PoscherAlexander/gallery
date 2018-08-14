@@ -28,6 +28,22 @@
     color: white;
 }
 
+.ph-text-black {
+    color: black;
+}
+
+.ph-text-black a {
+    color: #666 !important;
+}
+
+.ph-text-black a:hover {
+    color: black !important;
+}
+
+.ph-text-black a:focus {
+    color: black !important;
+}
+
 .ph-text-white a {
     color: white !important;
 }
