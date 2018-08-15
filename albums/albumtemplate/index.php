@@ -18,7 +18,8 @@ $a = InitAlbum();
 		<!--<script src="https://cdn.poscher.me/jquery/jquery-3.3.1.min.js"></script>-->
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 		<script src="../../js/main.js"></script>
-		<script src="../../js/loader.js"></script>
+        <script src="../../js/loader.js"></script>
+        <script src="../../js/imageLightbox.js"></script>
     </head>
 	<body onload="LoadImages()">
 		
@@ -106,6 +107,25 @@ $a = InitAlbum();
                 <a class="uk-text-center uk-heading-primary" href="#" uk-totop uk-scroll></a>
             </section>
         </div>
+
+        <script type="text/javascript">
+            UIkit.component('lightboxPanel', UIkit.component('lightboxPanel').extend({
+                data: {
+                    template: `<div class="uk-lightbox uk-overflow-hidden">
+                        <ul class="uk-lightbox-items"></ul>
+                        <div class="uk-lightbox-toolbar uk-position-top uk-text-right uk-transition-slide-top uk-transition-opaque">
+                            <a class="uk-icon-link uk-margin-small-left" href="" uk-icon="icon: trash; ratio: 1.1;"></a>
+                            <a class="uk-icon-link uk-margin-small-left" href="" uk-icon="icon: social; ratio: 1.1;"></a>
+                            <a class="uk-icon-link uk-margin-small-left" href="" uk-icon="icon: cloud-download; ratio: 1.1;"></a>
+                            <button class="uk-lightbox-toolbar-icon uk-close-large uk-margin-small-left" type="button" uk-close></button>
+                         </div>
+                        <a class="uk-lightbox-button uk-position-center-left uk-position-medium uk-transition-fade" href="#" uk-slidenav-previous uk-lightbox-item="previous"></a>
+                        <a class="uk-lightbox-button uk-position-center-right uk-position-medium uk-transition-fade" href="#" uk-slidenav-next uk-lightbox-item="next"></a>
+                        <div class="uk-lightbox-toolbar uk-lightbox-caption uk-position-bottom uk-text-center uk-transition-slide-bottom uk-transition-opaque"></div>
+                    </div>`
+                }
+            }));
+        </script>
 		
 	</body>
 </html>

@@ -64,7 +64,7 @@ class Album {
 												<span data-uk-icon="icon: plus; ratio: 1.3"></span>
 											</div>
 										</div>
-										<a data-caption="' . $image->getName() . '" href="images/' . $image->getFileName() . '" class="uk-position-cover"></a>
+										<a data-caption="' . $image->getName() . '" href="images/' . $image->getFileName() . '" onclick="ImageLightbox(\'' . $image->getFileName() . '\')" class="uk-position-cover"></a>
 									</div>
 									
 								</div>
