@@ -18,8 +18,9 @@ function ImageLightbox()
     }));
 }
 
-function SetLightboxValues(name, imagesString)
+function SetLightboxValues(name, imagesString, button)
 {
+    button = button || 0;
     var images = imagesString.split(';');
     var i = images.indexOf(name);
 
@@ -28,17 +29,29 @@ function SetLightboxValues(name, imagesString)
         images[c] = images[c].replace(/(\r\n|\n|\r)/gm,"");
     }
 
-    if(i == 0)
-    {
-        i = images.length;
+    if(i == 0){
+        document.getElementById('lightboxPrevious').style.display = 'none';
+    }
+    else {
+        document.getElementById('lightboxPrevious').style.display = 'inline-flex';
+    }
+
+    if(i == images.length-1){
+        document.getElementById('lightboxNext').style.display = 'none';
+    }
+    else {
+        document.getElementById('lightboxNext').style.display = 'inline-flex';
     }
 
     document.getElementById('lightboxDelete').setAttribute('href', 'delete.php/?n=' + name);
     document.getElementById('lightboxDelete').setAttribute('data-href', 'delete.php/?n=' + name);
     document.getElementById('lightboxShare').setAttribute('data-href', 'share.php/?n=' + name);
     document.getElementById('lightboxDownload').setAttribute('data-href', 'download.php/?n=' + name);
-    document.getElementById('lightboxPrevious').setAttribute('onclick', "SetLightboxValues('" + images[i-1] + "', '" + images.join(';') + "')");
-    console.log('success: ' + name);
+    document.getElementById('lightboxPrevious').setAttribute('onclick', "SetLightboxValues('" + images[i-1] + "', '" + images.join(';') + "', 'pre')");
+    document.getElementById('lightboxNext').setAttribute('onclick', "SetLightboxValues('" + images[i+1] + "', '" + images.join(';') + "', 'nex')");
+
+
+    console.log('name: ' + name + ' index: ' + i);
 }
 
 function LoadImageFiles(name)
@@ -58,7 +71,7 @@ function LoadImageFiles(name)
     {
         if (xmlhttp.readyState==4 && xmlhttp.status==200)
         {
-            if(xmlhttp.responseText.indexOf(';') != -1) SetLightboxValues(name, xmlhttp.responseText);
+            if(xmlhttp.responseText.indexOf(';') != -1) SetLightboxValues(name.replace(/(\r\n|\n|\r)/gm,""), xmlhttp.responseText.replace(/(\r\n|\n|\r)/gm,""));
         }
     }
 
