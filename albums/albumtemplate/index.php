@@ -106,6 +106,21 @@ $a = InitAlbum();
             <section class="uk-align-center uk-text-center uk-margin-medium-bottom">
                 <a class="uk-text-center uk-heading-primary" href="#" uk-totop uk-scroll></a>
             </section>
+
+            <div id="modalDelete" uk-modal>
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Delete Picture</h2>
+                    </div>
+                    <div class="uk-modal-body">
+                        <p>Are you sure, you want to delete this image?</p>
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <a class="uk-button uk-button-primary" href="" type="button" id="modalDeleteButton">Delete</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <script type="text/javascript">
