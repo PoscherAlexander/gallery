@@ -10,71 +10,28 @@ function ImageLightbox()
                         <a class="uk-icon-link uk-margin-small-left" href="#" data-href="download.php/?n=" uk-icon="icon: cloud-download; ratio: 1.2;" id="lightboxDownload"></a>
                         <button class="uk-lightbox-toolbar-icon uk-close-large uk-margin-small-left" type="button" uk-close></button>
                      </div>
-                    <a class="uk-lightbox-button uk-position-center-left uk-position-medium uk-transition-fade" href="#" uk-slidenav-previous uk-lightbox-item="previous" id="lightboxPrevious"></a>
-                    <a class="uk-lightbox-button uk-position-center-right uk-position-medium uk-transition-fade" href="#" uk-slidenav-next uk-lightbox-item="next" id="lightboxNext"></a>
-                    <div class="uk-lightbox-toolbar uk-lightbox-caption uk-position-bottom uk-text-center uk-transition-slide-bottom uk-transition-opaque"></div>
+                    <a class="uk-lightbox-button uk-position-center-left uk-position-medium uk-transition-fade" href="#" uk-slidenav-previous uk-lightbox-item="previous" onclick="InitIconLinks();" id="lightboxPrevious"></a>
+                    <a class="uk-lightbox-button uk-position-center-right uk-position-medium uk-transition-fade" href="#" uk-slidenav-next uk-lightbox-item="next" onclick="InitIconLinks();" id="lightboxNext"></a>
+                    <div class="uk-lightbox-toolbar uk-lightbox-caption uk-position-bottom uk-text-center uk-transition-slide-bottom uk-transition-opaque" id="lightboxCaption"></div>
                 </div>`
         }
     }));
 }
 
-function SetLightboxValues(name, imagesString, button)
+function InitIconLinks()
 {
-    button = button || 0;
-    var images = imagesString.split(';');
-    var i = images.indexOf(name);
-
-    for(var c = 0; c < images.length; c++)
-    {
-        images[c] = images[c].replace(/(\r\n|\n|\r)/gm,"");
-    }
-
-    if(i == 0){
-        document.getElementById('lightboxPrevious').style.display = 'none';
-    }
-    else {
-        document.getElementById('lightboxPrevious').style.display = 'inline-flex';
-    }
-
-    if(i == images.length-1){
-        document.getElementById('lightboxNext').style.display = 'none';
-    }
-    else {
-        document.getElementById('lightboxNext').style.display = 'inline-flex';
-    }
-
-    document.getElementById('lightboxDelete').setAttribute('href', 'delete.php/?n=' + name);
-    document.getElementById('lightboxDelete').setAttribute('data-href', 'delete.php/?n=' + name);
-    document.getElementById('lightboxShare').setAttribute('data-href', 'share.php/?n=' + name);
-    document.getElementById('lightboxDownload').setAttribute('data-href', 'download.php/?n=' + name);
-    document.getElementById('lightboxPrevious').setAttribute('onclick', "SetLightboxValues('" + images[i-1] + "', '" + images.join(';') + "', 'pre')");
-    document.getElementById('lightboxNext').setAttribute('onclick', "SetLightboxValues('" + images[i+1] + "', '" + images.join(';') + "', 'nex')");
-
-
-    console.log('name: ' + name + ' index: ' + i);
-}
-
-function LoadImageFiles(name)
-{
-    var xmlhttp;
-
-    if (window.XMLHttpRequest)
-    {// code for IE7+, Firefox, Chrome, Opera, Safari
-        xmlhttp=new XMLHttpRequest();
-    }
-    else
-    {// code for IE6, IE5
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    xmlhttp.onreadystatechange=function()
-    {
-        if (xmlhttp.readyState==4 && xmlhttp.status==200)
-        {
-            if(xmlhttp.responseText.indexOf(';') != -1) SetLightboxValues(name.replace(/(\r\n|\n|\r)/gm,""), xmlhttp.responseText.replace(/(\r\n|\n|\r)/gm,""));
+    setTimeout(function(){
+        try {
+            var caption = document.getElementById('lightboxCaption').innerHTML;
+            //alert(caption);
+            document.getElementById('lightboxDelete').setAttribute('href', 'delete.php/?n=' + caption);
+            document.getElementById('lightboxDelete').setAttribute('data-href', 'delete.php/?n=' + caption);
+            document.getElementById('lightboxShare').setAttribute('data-href', 'share.php/?n=' + caption);
+            document.getElementById('lightboxDownload').setAttribute('data-href', 'download.php/?n=' + caption);
         }
-    }
-
-    xmlhttp.open('POST','GetImageFiles.inc.php',true);
-    xmlhttp.send();
+        catch {
+            ;
+        }
+    }, 0.00001);
 }
+
