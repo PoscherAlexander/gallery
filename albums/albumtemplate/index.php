@@ -21,7 +21,7 @@ $a = InitAlbum();
         <script src="../../js/loader.js"></script>
         <script src="../../js/imageLightbox.js"></script>
     </head>
-	<body onload="LoadImages()">
+	<body onload="LoadImages(); ImageLightbox();">
 		
 		<div class="loader">
 			<div class="uk-flex uk-flex-middle uk-flex-center" uk-height-viewport>
@@ -107,5 +107,9 @@ $a = InitAlbum();
                 <a class="uk-text-center uk-heading-primary" href="#" uk-totop uk-scroll></a>
             </section>
         </div>
+
+        <script type="text/javascript">
+        </script>
+
 	</body>
 </html>
