@@ -17,11 +17,13 @@ $a = InitAlbum();
 		<script src="https://cdn.poscher.me/uikit/3.0.0/js/uikit-icons.min.js"></script>
 		<!--<script src="https://cdn.poscher.me/jquery/jquery-3.3.1.min.js"></script>-->
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script src="https://unpkg.com/ionicons@4.3.0/dist/ionicons.js"></script>
 		<script src="../../js/main.js"></script>
         <script src="../../js/loader.js"></script>
-        <script src="../../js/imageLightbox.js"></script>
+        <script src="../../js/modals.js"></script>
+        <script src="../../js/InitComponents.js"></script>
     </head>
-	<body onload="LoadImages(); ImageLightbox();" onkeyup="InitIconLinks();" ontouchend="InitIconLinks();">
+	<body onload="LoadImages(); InitComponents();" onkeyup="InitIconLinks();" onmouseup="InitIconLinks();" ontouchend="InitIconLinks();">
 		
 		<div class="loader">
 			<div class="uk-flex uk-flex-middle uk-flex-center" uk-height-viewport>
@@ -107,16 +109,19 @@ $a = InitAlbum();
                 <a class="uk-text-center uk-heading-primary" href="#" uk-totop uk-scroll></a>
             </section>
 
-            <div id="modalDelete" uk-modal>
-                <div class="uk-modal-dialog">
+            <!-- MODALS -->
+            <div id="modalDelete" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
                     <div class="uk-modal-header">
-                        <h2 class="uk-modal-title">Delete Picture</h2>
+                        <h2 class="uk-modal-title" id="modalDeleteTitle">Delete</h2>
                     </div>
-                    <div class="uk-modal-body">
-                        <p>Are you sure, you want to delete this image?</p>
-                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                        <a class="uk-button uk-button-primary" href="" type="button" id="modalDeleteButton">Delete</a>
+                    <div class="uk-modal-body" id="modalDeleteBody">
+                        <p id="modalDeleteText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button" onclick="RemoveHiddenAttribute('lightboxDelete');">Cancel</button>
+                        <button class="uk-button uk-button-danger" type="button" onclick="DeleteImage();" id="modalDeleteSubmit">Delete</button>
                     </div>
                 </div>
             </div>
