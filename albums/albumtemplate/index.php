@@ -21,7 +21,8 @@ $a = InitAlbum();
 		<script src="../../js/main.js"></script>
         <script src="../../js/loader.js"></script>
         <script src="../../js/modals.js"></script>
-        <script src="../../js/InitComponents.js"></script>
+        <script src="../../js/initComponents.js"></script>
+        <script src="../../js/fileUpload.js"></script>
     </head>
 	<body onload="LoadImages(); InitComponents();" onkeyup="InitIconLinks();" onmouseup="InitIconLinks();" ontouchend="InitIconLinks();">
 		
@@ -42,7 +43,7 @@ $a = InitAlbum();
 			</div>
 		</div>
 
-        <div id="content">
+        <div id="content" name="<?php echo $a->getPath(); ?>">
             <header>
                 <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading uk-inline" style="background-image: url(<?php echo 'images/' . $a->getThumbnail(); ?>);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
 
@@ -73,8 +74,8 @@ $a = InitAlbum();
                         <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
                             <div class="uk-navbar-left">
                                 <div class="uk-margin uk-align-center uk-text-center">
-                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked uk-visible@s" href="#albums" uk-scroll><span data-uk-icon="icon: plus; ratio: 1;"></span> ADD PICTURES</a>
-                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked uk-hidden@s" href="#albums" uk-scroll><span data-uk-icon="icon: pencil; ratio: 1;"></span> EDIT</a>
+                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked" href="#modalAdd" uk-toggle uk-scroll><span data-uk-icon="icon: plus; ratio: 1;"></span> ADD PICTURES</a>
+                                    <!--<a class="uk-button ph-button-white uk-button-large ph-button-white-linked uk-hidden@s" href="#albums" uk-scroll><span data-uk-icon="icon: pencil; ratio: 1;"></span> EDIT</a>-->
                                 </div>
                             </div>
                         </nav>
@@ -117,7 +118,7 @@ $a = InitAlbum();
                         <h2 class="uk-modal-title" id="modalDeleteTitle">Delete</h2>
                     </div>
                     <div class="uk-modal-body" id="modalDeleteBody">
-                        <p id="modalDeleteText">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <p id="modalDeleteText"></p>
                     </div>
                     <div class="uk-modal-footer uk-text-right">
                         <button class="uk-button uk-button-default uk-modal-close" type="button" onclick="RemoveHiddenAttribute('lightboxDelete');">Cancel</button>
@@ -126,9 +127,34 @@ $a = InitAlbum();
                 </div>
             </div>
 
+            <div id="modalAdd" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title" id="modalDeleteTitle">Add Pictures</h2>
+                    </div>
+                    <div class="uk-modal-body" id="modalDeleteBody">
+                        <div class="js-upload uk-placeholder uk-text-center">
+                            <span uk-icon="icon: cloud-upload"></span>
+                            <span class="uk-text-middle">Drag & Drop images or </span>
+                            <div uk-form-custom>
+                                <input type="file" multiple>
+                                <span class="uk-link">click here</span>
+                            </div>
+                            <span class="uk-text-middle"> to select images</span>
+                        </div>
+                        <progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+                    </div>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
-        <script type="text/javascript">
+        <script>
+
         </script>
 
 	</body>
