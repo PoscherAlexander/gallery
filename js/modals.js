@@ -1,16 +1,30 @@
 $( document ).ready(function() {
-    if(getParameterByName('del') == 1 && getParameterByName('n'))
+    if(getParameterByName('del') == 0 && getParameterByName('n'))
     {
         UIkit.notification({
-            message: '<span uk-icon=\'icon: trash\'></span> Deleted ' + getParameterByName('n'),
+            message: '<span uk-icon=\'icon: trash\'></span> Deleted ' + getParameterByName('n').replace('$', ' '),
+            pos: 'bottom-left',
+        });
+    }
+    else if(getParameterByName('del') == 1)
+    {
+        UIkit.notification({
+            message: '<span uk-icon=\'icon: warning\'></span> Something went wrong. Please try again!',
             pos: 'bottom-left',
         });
     }
 });
 
-function OpenDeleteModal()
+function OpenDeleteModal(name)
 {
-    var caption = getCaption();
+    name = name || 0;
+    var caption;
+
+    if(name == 0) {
+        caption = getCaption();
+    } else {
+        caption = name;
+    }
     var title = document.getElementById('modalDeleteTitle');
     var text = document.getElementById('modalDeleteText');
     var submit = document.getElementById('modalDeleteSubmit');
@@ -26,18 +40,42 @@ function DeleteImage(file)
 {
     UIkit.modal('#modalDelete').hide();
 
-    var url = window.location.href;
-    if(url.indexOf('#') > -1) {
-        url = url.substr(0, url.indexOf('#'));
-    }
-    if (url.indexOf('?') > -1){
-        url = url.substr(0, url.indexOf('?'));
-        url += '?del=1&n=' + file.replace(' ', '$');
-    }else{
-        url += '?del=1&n=' + file.replace(' ', '$');
-    }
-    RemoveHiddenAttribute('lightboxDelete');
-    window.location = url;
+    var album = document.getElementById('modalDelete').getAttribute('name');
+
+    $.ajax({
+        data: 'delname=' + file + '&album=' + album,
+        url: '../../php/DeleteImage.inc.php',
+        method: 'POST',
+        success: function(ret) {
+            var url = window.location.href;
+            if(ret == 1 || ret == 2)
+            {
+                if(url.indexOf('#') > -1) {
+                    url = url.substr(0, url.indexOf('#'));
+                }
+                if (url.indexOf('?') > -1){
+                    url = url.substr(0, url.indexOf('?'));
+                    url += '?del=1';
+                }else{
+                    url += '?del=1';
+                }
+            }
+            else
+            {
+                if(url.indexOf('#') > -1) {
+                    url = url.substr(0, url.indexOf('#'));
+                }
+                if (url.indexOf('?') > -1){
+                    url = url.substr(0, url.indexOf('?'));
+                    url += '?del=0&n=' + file.replace(' ', '$');
+                }else{
+                    url += '?del=0&n=' + file.replace(' ', '$');
+                }
+            }
+            RemoveHiddenAttribute('lightboxDelete');
+            window.location = url;
+        }
+    });
 }
 
 function getCaption()
@@ -47,7 +85,7 @@ function getCaption()
 
 function RemoveHiddenAttribute(id)
 {
-    document.getElementById(id).removeAttribute('hidden');
+    if(document.getElementById(id) != null) document.getElementById(id).removeAttribute('hidden');
 }
 
 function getParameterByName(name, url) {

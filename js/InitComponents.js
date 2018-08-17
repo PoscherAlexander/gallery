@@ -6,7 +6,7 @@ function InitComponents()
                     <ul class="uk-lightbox-items"></ul>
                     <div class="uk-lightbox-toolbar uk-position-top uk-text-right uk-transition-slide-top uk-transition-opaque">
                         <a class="uk-icon-link uk-margin-small-left" onclick="OpenDeleteModal();" uk-icon="icon: trash; ratio: 1.2;" id="lightboxDelete" uk-toggle></a>
-                        <a class="uk-icon-link uk-margin-small-left" href="#" uk-icon="icon: social; ratio: 1.2;" id="lightboxShare"></a>
+                        <a class="uk-icon-link uk-margin-small-left" href="#" uk-icon="icon: social; ratio: 1.2;" id="lightboxShare" hidden></a>
                         <a class="uk-icon-link uk-margin-small-left" href="#" uk-icon="icon: cloud-download; ratio: 1.2;" id="lightboxDownload"></a>
                         <button class="uk-lightbox-toolbar-icon uk-close-large uk-margin-small-left" type="button" uk-close></button>
                      </div>

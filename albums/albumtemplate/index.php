@@ -110,7 +110,7 @@ $a = InitAlbum();
             </section>
 
             <!-- MODALS -->
-            <div id="modalDelete" class="uk-flex-top" uk-modal>
+            <div id="modalDelete" class="uk-flex-top" name="<?php echo $a->getPath(); ?>" uk-modal>
                 <div class="uk-modal-dialog uk-margin-auto-vertical">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
                     <div class="uk-modal-header">
