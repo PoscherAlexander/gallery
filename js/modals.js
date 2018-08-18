@@ -3,6 +3,7 @@ $( document ).ready(function() {
     {
         UIkit.notification({
             message: '<span uk-icon=\'icon: trash\'></span> Deleted ' + getParameterByName('n').replace('$', ' '),
+            status: 'primary',
             pos: 'bottom-left',
         });
     }
@@ -10,6 +11,15 @@ $( document ).ready(function() {
     {
         UIkit.notification({
             message: '<span uk-icon=\'icon: warning\'></span> Something went wrong. Please try again!',
+            status: 'danger',
+            pos: 'bottom-left',
+        });
+    }
+    else if(getParameterByName('up') == 0)
+    {
+        UIkit.notification({
+            message: '<span uk-icon=\'icon: upload\'></span> Images are uploaded',
+            status: 'primary',
             pos: 'bottom-left',
         });
     }

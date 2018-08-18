@@ -138,7 +138,7 @@ $a = InitAlbum();
                             <span uk-icon="icon: cloud-upload"></span>
                             <span class="uk-text-middle">Drag & Drop images or </span>
                             <div uk-form-custom>
-                                <input type="file" multiple>
+                                <input name="imageFiles" type="file" multiple>
                                 <span class="uk-link">click here</span>
                             </div>
                             <span class="uk-text-middle"> to select images</span>

@@ -51,9 +51,19 @@ $( document ).ready(function() {
 
             setTimeout(function () {
                 bar.setAttribute('hidden', 'hidden');
+                var url = window.location.href;
+                if(url.indexOf('#') > -1) {
+                    url = url.substr(0, url.indexOf('#'));
+                }
+                if (url.indexOf('?') > -1){
+                    url = url.substr(0, url.indexOf('?'));
+                    url += '?up=0';
+                }else{
+                    url += '?up=0';
+                }
+                window.location = url;
             }, 1000);
 
-            alert('Upload Completed');
         }
 
     });
