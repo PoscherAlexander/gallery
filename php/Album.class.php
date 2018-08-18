@@ -8,7 +8,7 @@ class Album {
     private $files;
     private $images = array();
     private $errorMessage;
-    private $validExtensions = array('jpg', 'png', 'gif');
+    private $validExtensions = array('jpg', 'png', 'jpeg');
 
     public function getName() { return $this->name; }
     public function setName($name) { $this->name = $name; }
@@ -120,14 +120,12 @@ class Album {
 
     private function getFileExtension($file)
     {
-        $data = explode('.', $file);
-        return $data[1];
+        return pathinfo($file, PATHINFO_EXTENSION);
     }
 
     private function getFileName($file)
     {
-        $data = explode('.', $file);
-        return $data[0];
+        return pathinfo($file, PATHINFO_FILENAME);
     }
 
     private function isFile($file)

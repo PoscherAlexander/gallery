@@ -38,7 +38,7 @@ $a = InitAlbum();
 			<div class="uk-flex uk-flex-middle uk-flex-center" uk-height-viewport>
 				<div class="container uk-text-center">
 					<span uk-spinner="ratio: 6"></span>
-					<h3>Hang on...</h3>
+					<h3>Prepare new pictures...</h3>
 				</div>
 			</div>
 		</div>

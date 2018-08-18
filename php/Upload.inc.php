@@ -7,6 +7,15 @@ $files = reArrayFiles($_FILES['files']);
 foreach($files as $file) {
     $target_file = $target_dir . basename($file["name"]);
     $uploadOk = 1;
+
+    if (file_exists($target_file)) {
+        $c = 2;
+        do {
+            $target_file = $target_dir . pathinfo($file["name"], PATHINFO_FILENAME) . '_' . $c . '.' . pathinfo($file["name"], PATHINFO_EXTENSION);
+            $c++;
+        } while(file_exists($target_file));
+    }
+
     if ($uploadOk == 1) {
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
             echo 'success';

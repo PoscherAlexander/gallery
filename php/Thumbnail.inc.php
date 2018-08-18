@@ -6,7 +6,11 @@ function makeThumbnail($src, $dest, $desired_width) {
     try {
         set_time_limit(0);
         if (!file_exists($dest)) {
-            $source_image = imagecreatefromjpeg($src);
+            if(strtolower(pathinfo($src, PATHINFO_EXTENSION)) == 'png') {
+                $source_image = imagecreatefrompng($src);
+            } else {
+                $source_image = imagecreatefromjpeg($src);
+            }
             $width = imagesx($source_image);
             $height = imagesy($source_image);
             $desired_height = floor($height * ($desired_width / $width));
