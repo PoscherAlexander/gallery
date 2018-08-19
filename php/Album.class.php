@@ -14,7 +14,7 @@ class Album {
     public function setName($name) { $this->name = $name; }
     public function getPath() { return $this->path; }
     public function setPath($path) { $this->path = $path; }
-    public function getThumbnail() { return $this->thumbnail; }
+    public function getThumbnail() { return $this->getLastModifiedImage(); }
     public function setThumbnail($thumbnail) { $this->thumbnail = $thumbnail; }
     public function getFiles() { return $this->files; }
     /*public function setFiles($files) { $this->files = $files; }*/
@@ -132,6 +132,22 @@ class Album {
     {
         if(strpos($file, '.') === false) return false;
         return true;
+    }
+
+    private function getLastModifiedImage()
+    {
+        if(basename(getcwd()) == 'php') {
+            $dir = "../albums/" . $this->getPath() . "/images/";
+        } else {
+            $dir = "images/";
+        }
+        chdir($dir);
+        array_multisort(array_map('filemtime', ($files = glob("*.*"))), SORT_DESC, $files);
+
+        if(!empty($files))
+        {
+            return $files[0];
+        }
     }
 }
 ?>

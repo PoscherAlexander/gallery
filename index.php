@@ -13,6 +13,7 @@
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/loader.js"></script>
+        <script src="js/check.js"></script>
     </head>
     <body onload="LoadAlbums()">
 		
@@ -63,6 +64,32 @@
                     <div class="ph-heading-logo uk-margin-top"><p>&copy; You | <a class="uk-text-primary" href="#">Login</a> </p></div>
                 </div>
             </section>
+
+            <!-- MODALS -->
+            <div id="modalNewAlbum" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title" id="modalNewAlbumTitle">New Album</h2>
+                    </div>
+                    <form class="uk-form-stacked" action="php/newalbum/" onsubmit="return CheckNewAlbum();" method="POST" id="frmNewAlbum">
+                        <div class="uk-modal-body" id="modalNewAlbumBody">
+                                <div class="uk-margin">
+                                    <div class="uk-form-controls">
+                                        <input class="uk-input" type="text" name="txtAlbumName" id="txtAlbumName" placeholder="Name">
+                                    </div>
+                                    <div class="uk-margin-small">
+                                        <div class="uk-form-label uk-form-feedback" id="txtAlbumNameFeedback"></div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="uk-modal-footer uk-text-right">
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                            <button class="uk-button uk-button-primary" type="submit" id="modalNewAlbumSubmit">Create</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
 
         </div>
     </body>

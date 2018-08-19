@@ -87,6 +87,11 @@
     box-shadow: 0 8px 19px rgba(0, 0, 0, 0.16);
 }
 
+/* FORM */
+.uk-form-feedback {
+    color: #f0506e;
+}
+
 /* NAV */
 .ph-nav-button {
     color: white;
