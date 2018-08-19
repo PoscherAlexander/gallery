@@ -33,9 +33,11 @@ class Album {
     }
 
     private function getImagesOfAlbum() {
-        foreach($this->files as $file) {
-            if(in_array(strtolower($this->getFileExtension($file)), $this->validExtensions)) {
-                $this->images[] = new Image($this->getFileName($file), $this->getFileExtension($file), $file);
+        if(!empty($this->files)) {
+            foreach ($this->files as $file) {
+                if (in_array(strtolower($this->getFileExtension($file)), $this->validExtensions)) {
+                    $this->images[] = new Image($this->getFileName($file), $this->getFileExtension($file), $file);
+                }
             }
         }
         return $this->checkImageArray();
@@ -103,6 +105,28 @@ class Album {
          return unserialize($data);
     }
 
+    public function SaveAlbum()
+    {
+        return serialize($this);
+    }
+
+    public function CreateNewAlbum($albumPath)
+    {
+        if(mkdir($albumPath . $this->getPath(), 0755)) {
+            mkdir($albumPath . $this->getPath() . '/images', 0755);
+            mkdir($albumPath . $this->getPath() . '/thumbnails', 0755);
+            copy($albumPath . 'albumtemplate/index.php', $albumPath . $this->getPath() . '/index.php');
+            copy($albumPath . 'albumtemplate/GetImages.inc.php', $albumPath . $this->getPath() . '/GetImages.inc.php');
+            copy($albumPath . 'albumtemplate/images/emptyalbum.emp', $albumPath . $this->getPath() . '/images/emptyalbum.emp');
+            file_put_contents($albumPath . $this->getPath() . '/properties.bin', $this->SaveAlbum());
+
+            $albums = json_decode(file_get_contents($albumPath . 'albums.ini'));
+            $albums[] = $this->getPath();
+            file_put_contents($albumPath . 'albums.ini', json_encode($albums));
+        }
+        else return false;
+    }
+
     private function checkImageArray()
     {
         if(count($this->images) == 0) {
@@ -147,6 +171,10 @@ class Album {
         if(!empty($files))
         {
             return $files[0];
+        }
+        else
+        {
+            return 'emptyalbum.emp';
         }
     }
 }
