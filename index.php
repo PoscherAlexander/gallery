@@ -13,7 +13,7 @@
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/loader.js"></script>
-        <script src="js/check.js"></script>
+
     </head>
     <body onload="LoadAlbums()">
 		
@@ -32,7 +32,7 @@
                     <!-- NAV -->
                     <div class="uk-position-bottom">
                         <nav class="uk-navbar-container uk-navbar-transparent ph-text-white" data-uk-navbar>
-                            <div class="uk-navbar-right">
+                            <div class="uk-navbar-left">
                                 <div class="uk-navbar-item">
                                     <a class="uk-logo ph-text-white" href=""><a class="ph-nav-button ph-a-no-underline" href=""><span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGIN</a>
                                 </div>
@@ -76,7 +76,7 @@
                         <div class="uk-modal-body" id="modalNewAlbumBody">
                                 <div class="uk-margin">
                                     <div class="uk-form-controls">
-                                        <input class="uk-input" type="text" name="txtAlbumName" id="txtAlbumName" placeholder="Name">
+                                        <input class="uk-input" type="text" name="txtAlbumName" id="txtAlbumName" onchange="IsAlbumNameUsed();" placeholder="Name">
                                     </div>
                                     <div class="uk-margin-small">
                                         <div class="uk-form-label uk-form-feedback" id="txtAlbumNameFeedback"></div>
@@ -92,5 +92,6 @@
             </div>
 
         </div>
+        <script src="js/check.js"></script>
     </body>
 </html>

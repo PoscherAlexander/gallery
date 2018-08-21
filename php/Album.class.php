@@ -118,6 +118,7 @@ class Album {
             copy($albumPath . 'albumtemplate/index.php', $albumPath . $this->getPath() . '/index.php');
             copy($albumPath . 'albumtemplate/GetImages.inc.php', $albumPath . $this->getPath() . '/GetImages.inc.php');
             copy($albumPath . 'albumtemplate/images/emptyalbum.emp', $albumPath . $this->getPath() . '/images/emptyalbum.emp');
+            copy($albumPath . 'albumtemplate/thumbnails/emptyalbum.emp', $albumPath . $this->getPath() . '/thumbnails/emptyalbum.emp');
             file_put_contents($albumPath . $this->getPath() . '/properties.bin', $this->SaveAlbum());
 
             $albums = json_decode(file_get_contents($albumPath . 'albums.ini'));
@@ -165,12 +166,14 @@ class Album {
         } else {
             $dir = "images/";
         }
-        chdir($dir);
+        @chdir($dir);
         array_multisort(array_map('filemtime', ($files = glob("*.*"))), SORT_DESC, $files);
+
+        unset($files[array_search('emptyalbum.emp', $files)]);
 
         if(!empty($files))
         {
-            return $files[0];
+            return array_values($files)[0];
         }
         else
         {
