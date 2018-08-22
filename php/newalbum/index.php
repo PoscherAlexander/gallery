@@ -10,6 +10,14 @@ if(isset($_POST['txtAlbumName']))
 
     $a->CreateNewAlbum('../../albums/');
 
+    setInfo($txtAlbumName);
+
     header('Location: ../../');
+}
+
+function setInfo($albumName)
+{
+    $info = array('code' => 'add', 'album' => $albumName);
+    file_put_contents('../../albums/temp.info', json_encode($info));
 }
 ?>

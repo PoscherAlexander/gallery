@@ -13,6 +13,7 @@
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/loader.js"></script>
+        <script src="js/albums.js"></script>
 
     </head>
     <body onload="LoadAlbums()">

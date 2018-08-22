@@ -110,6 +110,10 @@ $a = InitAlbum();
                 <a class="uk-text-center uk-heading-primary" href="#" uk-totop uk-scroll></a>
             </section>
 
+            <section class="uk-margin uk-align-center uk-text-center">
+                <a class="uk-button uk-button-default" href="#modalDeleteAlbum" uk-toggle>Delete Album</a>
+            </section>
+
             <!-- MODALS -->
             <div id="modalDelete" class="uk-flex-top" name="<?php echo $a->getPath(); ?>" uk-modal>
                 <div class="uk-modal-dialog uk-margin-auto-vertical">
@@ -147,6 +151,22 @@ $a = InitAlbum();
                     </div>
                     <div class="uk-modal-footer uk-text-right">
                         <button class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modalDeleteAlbum" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Delete Album</h2>
+                    </div>
+                    <div class="uk-modal-body" id="modalDeleteAlbumBody">
+                        <p>Are you sure you want to permanently delete <?php echo $a->getName(); ?>?</p>
+                    </div>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <a class="uk-button uk-button-danger" href="../../php/deletealbum/?a=<?php echo $a->getPath(); ?>" type="button">Delete</a>
                     </div>
                 </div>
             </div>

@@ -19,6 +19,7 @@ foreach($files as $file) {
     if ($uploadOk == 1) {
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
             echo 'success';
+            setInfo($album);
         }
     }
 }
@@ -36,5 +37,11 @@ function reArrayFiles(&$file_post) {
     }
 
     return $file_ary;
+}
+
+function setInfo($album)
+{
+    $info = array('code' => 'add');
+    file_put_contents('../albums/' . $album . '/temp.info', json_encode($info));
 }
 ?>

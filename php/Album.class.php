@@ -131,7 +131,7 @@ class Album {
     private function checkImageArray()
     {
         if(count($this->images) == 0) {
-            $this->errorMessage = 'This album is empty.';
+            $this->errorMessage = '<span class="uk-text-center uk-align-center">This album is empty.</span>';
             return 1; //no images in folder
         }
         else if (count($this->images) < 0) {
@@ -161,15 +161,18 @@ class Album {
 
     private function getLastModifiedImage()
     {
+        $basedir = getcwd();
         if(basename(getcwd()) == 'php') {
             $dir = "../albums/" . $this->getPath() . "/images/";
         } else {
             $dir = "images/";
         }
-        @chdir($dir);
+        chdir($dir);
         array_multisort(array_map('filemtime', ($files = glob("*.*"))), SORT_DESC, $files);
 
         unset($files[array_search('emptyalbum.emp', $files)]);
+
+        chdir($basedir);
 
         if(!empty($files))
         {
