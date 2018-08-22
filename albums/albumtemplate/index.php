@@ -23,6 +23,8 @@ $a = InitAlbum();
         <script src="../../js/modals.js"></script>
         <script src="../../js/initComponents.js"></script>
         <script src="../../js/fileUpload.js"></script>
+        <script src="../../js/check.js"></script>
+        <script src="../../js/login.js"></script>
     </head>
 	<body onload="LoadImages(); InitComponents();" onkeyup="InitIconLinks();" onmouseup="InitIconLinks();" ontouchend="InitIconLinks();">
 		
@@ -57,7 +59,7 @@ $a = InitAlbum();
                             </div>
                             <div class="uk-navbar-right">
                                 <div class="uk-navbar-item">
-                                    <a class="uk-logo ph-text-white" href=""><a class="ph-nav-button ph-a-no-underline" href=""><span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGIN</a>
+                                    <a class="uk-logo ph-text-white ph-nav-button ph-a-no-underline ph-text-small" href="#modalLogin" id="loginButton" uk-toggle><span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGIN</a>
                                 </div>
                             </div>
                         </nav>
@@ -74,7 +76,7 @@ $a = InitAlbum();
                         <nav class="uk-navbar-container uk-navbar-transparent" data-uk-navbar>
                             <div class="uk-navbar-left">
                                 <div class="uk-margin uk-align-center uk-text-center">
-                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked" href="#modalAdd" uk-toggle uk-scroll><span data-uk-icon="icon: plus; ratio: 1;"></span> ADD PICTURES</a>
+                                    <a class="uk-button ph-button-white uk-button-large ph-button-white-linked" href="#modalAdd" id="addPictures" hidden uk-toggle uk-scroll><span data-uk-icon="icon: plus; ratio: 1;"></span> ADD PICTURES</a>
                                     <!--<a class="uk-button ph-button-white uk-button-large ph-button-white-linked uk-hidden@s" href="#albums" uk-scroll><span data-uk-icon="icon: pencil; ratio: 1;"></span> EDIT</a>-->
                                 </div>
                             </div>
@@ -168,6 +170,39 @@ $a = InitAlbum();
                         <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
                         <a class="uk-button uk-button-danger" href="../../php/deletealbum/?a=<?php echo $a->getPath(); ?>" type="button">Delete</a>
                     </div>
+                </div>
+            </div>
+
+            <div id="modalLogin" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Login</h2>
+                    </div>
+                    <form class="uk-form-stacked" action="." onsubmit="return CheckLogin();" method="POST" id="frmLogin">
+                        <div class="uk-modal-body">
+                            <div class="uk-margin">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" type="text" name="txtUsername" id="txtUsername" placeholder="Username">
+                                </div>
+                                <div class="uk-margin-small">
+                                    <div class="uk-form-label uk-form-feedback" id="txtUsernameFeedback"></div>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" type="password" name="txtPassword" id="txtPassword" placeholder="Password">
+                                </div>
+                                <div class="uk-margin-small">
+                                    <div class="uk-form-label uk-form-feedback" id="txtPasswordFeedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-modal-footer uk-text-right">
+                            <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                            <button class="uk-button uk-button-primary" type="submit" id="modalLoginSubmit">Login</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 

@@ -81,6 +81,10 @@
     text-decoration: none;
 }
 
+.ph-text-small {
+    font-size: 12pt !important;
+}
+
 
 /* CARD */
 .uk-card {

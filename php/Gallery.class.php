@@ -45,7 +45,7 @@ class Gallery {
 						</a>';
         }
 
-        echo '<a class="uk-inline" href="#modalNewAlbum" uk-toggle>
+        echo '<a class="uk-inline" href="#modalNewAlbum" id="cardNewAlbum" hidden uk-toggle>
                         <div class="uk-card uk-card-hover ph-height-medium" id="newAlbum">
                             <div class="uk-card-body">
                                 <div class="uk-position-center">
