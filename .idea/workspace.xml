@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e90aedcc-4e0b-45b3-aab7-4c478b97edf9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/php/CheckSetup.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/Setup.inc.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/php/download/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albums/albums.ini" beforeDir="false" afterPath="$PROJECT_DIR$/albums/albums.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/albums/albumtemplate/GetImages.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/albums/albumtemplate/GetImages.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/check.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/check.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/initComponents.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/initComponents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/loader.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/loader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modals.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/Album.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Album.class.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/php/login/data.json" beforeDir="false" afterPath="$PROJECT_DIR$/php/login/data.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/php/Gallery.class.php" beforeDir="false" afterPath="$PROJECT_DIR$/php/Gallery.class.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +30,7 @@
       <usages-collector id="statistics.lifecycle.project">
         <counts>
           <entry key="project.closed" value="32" />
-          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.12" value="2" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -57,7 +45,7 @@
           <entry key="project.open.time.24" value="2" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.28" value="1" />
-          <entry key="project.opened" value="32" />
+          <entry key="project.opened" value="33" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -66,7 +54,7 @@
           <entry key="dummy" value="5" />
           <entry key="js" value="9605" />
           <entry key="json" value="14" />
-          <entry key="php" value="13524" />
+          <entry key="php" value="13566" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -75,7 +63,7 @@
           <entry key="HTML" value="27" />
           <entry key="JSON" value="14" />
           <entry key="JavaScript" value="9601" />
-          <entry key="PHP" value="13501" />
+          <entry key="PHP" value="13543" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
@@ -84,7 +72,7 @@
           <entry key="css" value="12" />
           <entry key="js" value="79" />
           <entry key="json" value="2" />
-          <entry key="php" value="81" />
+          <entry key="php" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -92,18 +80,27 @@
           <entry key="CSS" value="12" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="79" />
-          <entry key="PHP" value="81" />
+          <entry key="PHP" value="82" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
-              <caret line="143" column="61" lean-forward="true" selection-start-line="143" selection-start-column="61" selection-end-line="143" selection-end-column="61" />
+              <caret line="143" column="61" selection-start-line="143" selection-start-column="61" selection-end-line="143" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/php/Gallery.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="5" selection-start-column="5" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -200,8 +197,8 @@
         <option value="$PROJECT_DIR$/js/login.js" />
         <option value="$PROJECT_DIR$/js/check.js" />
         <option value="$PROJECT_DIR$/php/Album.class.php" />
-        <option value="$PROJECT_DIR$/php/Gallery.class.php" />
         <option value="$PROJECT_DIR$/albums/index.php" />
+        <option value="$PROJECT_DIR$/php/Gallery.class.php" />
       </list>
     </option>
   </component>
@@ -336,11 +333,12 @@
       <workItem from="1535015263084" duration="3601000" />
       <workItem from="1535040595950" duration="5075000" />
       <workItem from="1535049518598" duration="570000" />
+      <workItem from="1535050463202" duration="97000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148423000" />
+    <option name="totallyTimeSpent" value="148520000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,8 +351,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1519" height="977" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24400274" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24742974" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -628,13 +627,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/albums/albumtemplate/GetImages.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/albums/albumtemplate/GetImages.inc.php" />
     <entry file="file://$PROJECT_DIR$/js/check.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
@@ -642,20 +635,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/albums/albumtemplate/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="115" column="174" selection-start-line="115" selection-start-column="174" selection-end-line="115" selection-end-column="174" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/php/Gallery.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="47" column="119" selection-start-line="47" selection-start-column="119" selection-end-line="47" selection-end-column="119" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/albums/albumtemplate/index.php" />
     <entry file="file://$PROJECT_DIR$/albums/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -680,7 +660,14 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="143" column="61" lean-forward="true" selection-start-line="143" selection-start-column="61" selection-end-line="143" selection-end-column="61" />
+          <caret line="143" column="61" selection-start-line="143" selection-start-column="61" selection-end-line="143" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/Gallery.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
