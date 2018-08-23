@@ -116,10 +116,10 @@ class Album {
         if(mkdir($albumPath . $this->getPath(), 0755)) {
             mkdir($albumPath . $this->getPath() . '/images', 0755);
             mkdir($albumPath . $this->getPath() . '/thumbnails', 0755);
-            copy($albumPath . 'albumtemplate/index.php', $albumPath . $this->getPath() . '/index.php');
-            copy($albumPath . 'albumtemplate/GetImages.inc.php', $albumPath . $this->getPath() . '/GetImages.inc.php');
-            copy($albumPath . 'albumtemplate/images/emptyalbum.emp', $albumPath . $this->getPath() . '/images/emptyalbum.emp');
-            copy($albumPath . 'albumtemplate/thumbnails/emptyalbum.emp', $albumPath . $this->getPath() . '/thumbnails/emptyalbum.emp');
+            copy($albumPath . '_albumtemplate/index.php', $albumPath . $this->getPath() . '/index.php');
+            copy($albumPath . '_albumtemplate/GetImages.inc.php', $albumPath . $this->getPath() . '/GetImages.inc.php');
+            copy($albumPath . '_albumtemplate/images/emptyalbum.emp', $albumPath . $this->getPath() . '/images/emptyalbum.emp');
+            copy($albumPath . '_albumtemplate/thumbnails/emptyalbum.emp', $albumPath . $this->getPath() . '/thumbnails/emptyalbum.emp');
             file_put_contents($albumPath . $this->getPath() . '/properties.bin', $this->SaveAlbum());
 
             $albums = json_decode(file_get_contents($albumPath . 'albums.ini'));

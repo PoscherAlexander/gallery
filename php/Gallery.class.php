@@ -45,6 +45,8 @@ class Gallery {
 						</a>';
         }
 
+        if(empty($this->albums)) echo '<h1 class="uk-text-muted uk-width-1-1 uk-text-center">Log in to add a new album.</h1>';
+
         echo '<a class="uk-inline" href="#modalNewAlbum" id="cardNewAlbum" hidden uk-toggle>
                         <div class="uk-card uk-card-hover ph-height-medium" id="newAlbum">
                             <div class="uk-card-body">
