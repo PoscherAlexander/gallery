@@ -14,7 +14,7 @@ function FireNotification(info)
     if(info[0] == 'del')
     {
         UIkit.notification({
-            message: '<span uk-icon=\'icon: trash\'></span> Deleted Album ' + info[1],
+            message: '<span uk-icon=\'icon: trash\'></span> Deleted album ' + info[1],
             status: 'primary',
             pos: 'bottom-left',
         });
@@ -22,7 +22,7 @@ function FireNotification(info)
     else if(info[0] == 'add')
     {
         UIkit.notification({
-            message: '<span uk-icon=\'icon: plus\'></span> Created new Album ' + info[1],
+            message: '<span uk-icon=\'icon: plus\'></span> Created new album ' + info[1],
             status: 'primary',
             pos: 'bottom-left',
         });

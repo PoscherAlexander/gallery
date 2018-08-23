@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'Image.class.php';
 class Album {
 
@@ -79,9 +80,9 @@ class Album {
 											<div class="uk-inline">
 												<a data-uk-icon="icon:more-vertical"></a>
 												<div data-uk-dropdown="mode: click; pos:top-right">
-													<ul class="uk-nav uk-dropdown-nav ph-text-black">
-														<li id="imageOptionDelete" hidden><a onclick="OpenDeleteModal(\'' . $image->getFileName() . '\')"><span data-uk-icon="icon: trash; ratio: 0.9"></span> Delete</a></li>
-														<li><a href="#"><span data-uk-icon="icon: info; ratio: 0.9"></span> Details</a></li>
+													<ul class="uk-nav uk-dropdown-nav ph-text-black">';
+				if(isset($_SESSION['id'])) echo         '<li id="imageOptionDelete"><a onclick="OpenDeleteModal(\'' . $image->getFileName() . '\')"><span data-uk-icon="icon: trash; ratio: 0.9"></span> Delete</a></li>';
+				echo 									'<li><a href="#"><span data-uk-icon="icon: info; ratio: 0.9"></span> Details</a></li>
 														<li hidden><a href="#"><span data-uk-icon="icon: social; ratio: 0.9"></span> Share</a></li>
 														<li><a href="#"><span data-uk-icon="icon: cloud-download; ratio: 0.9"></span> Download</a></li>
 													</ul>

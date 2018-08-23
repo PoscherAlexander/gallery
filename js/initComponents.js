@@ -5,7 +5,7 @@ function InitComponents()
             template: `<div class="uk-lightbox uk-overflow-hidden">
                     <ul class="uk-lightbox-items"></ul>
                     <div class="uk-lightbox-toolbar uk-position-top uk-text-right uk-transition-slide-top uk-transition-opaque">
-                        <a class="uk-icon-link uk-margin-small-left" onclick="OpenDeleteModal();" uk-icon="icon: trash; ratio: 1.2;" id="lightboxDelete" uk-toggle></a>
+                        <a class="uk-icon-link uk-margin-small-left" onclick="OpenDeleteModal();" uk-icon="icon: trash; ratio: 1.2;" id="lightboxDelete" hidden uk-toggle></a>
                         <a class="uk-icon-link uk-margin-small-left" href="#" uk-icon="icon: social; ratio: 1.2;" id="lightboxShare" hidden></a>
                         <a class="uk-icon-link uk-margin-small-left" href="#" uk-icon="icon: cloud-download; ratio: 1.2;" id="lightboxDownload"></a>
                         <button class="uk-lightbox-toolbar-icon uk-close-large uk-margin-small-left" type="button" uk-close></button>
@@ -22,15 +22,24 @@ function InitComponents()
     }));
 }
 
-function InitIconLinks()
+function InitIconLinks(code)
 {
+    code = code || 0;
     setTimeout(function(){
         try {
             var caption = document.getElementById('lightboxCaption').innerHTML;
-            //alert(caption);
             document.getElementById('lightboxDelete').setAttribute('onclick', 'OpenDeleteModal(\'' + caption + '\');');
             document.getElementById('lightboxShare').setAttribute('data-href', 'share.php/?n=' + caption);
             document.getElementById('lightboxDownload').setAttribute('data-href', 'download.php/?n=' + caption);
+
+            $.ajax({
+                type: "POST",
+                url: '../../php/IsLoggedIn.inc.php',
+                success: function(data){
+                    if(data == 0) document.getElementById('lightboxDelete').hidden = false;
+                }
+            });
+
         }
         catch {
             ;

@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(window).on('load',function() {
 
     var url;
     if(document.getElementById('content').getAttribute('name') == '_home') url = 'php/IsLoggedIn.inc.php';
@@ -11,20 +11,41 @@ $( document ).ready(function() {
             if (ret == 0) {
                 if(document.getElementById('content').getAttribute('name') == '_home') {
                     document.getElementById('loginButton').innerHTML = '<span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGOUT';
-                    document.getElementById('loginButton').setAttribute('href', 'php/logout');
+                    document.getElementById('loginButton').setAttribute('onclick', 'Logout(\'home\');');
+                    document.getElementById('loginButton').removeAttribute('href');
                     setTimeout(function () {
                         document.getElementById('cardNewAlbum').hidden = false;
-                    }, 0.1);
+                    }, 0.0001);
                 }
                 else {
                     document.getElementById('loginButton').innerHTML = '<span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGOUT';
-                    document.getElementById('loginButton').setAttribute('href', '../../php/logout');
+                    document.getElementById('loginButton').setAttribute('onclick', 'Logout(\'album\');');
+                    document.getElementById('loginButton').removeAttribute('href');
                     document.getElementById('addPictures').hidden = false;
-                    setTimeout(function () {
-                        document.getElementById('imageOptionDelete').hidden = false;
-                    }, 0.1);
                 }
             }
         }
     });
 });
+
+function Logout(dir)
+{
+    var url;
+    if(dir == 'home')
+    {
+        url = 'php/Logout.inc.php';
+    }
+    else
+    {
+        url = '../../php/Logout.inc.php';
+    }
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        success: function(){
+            location.reload();
+        }
+    });
+}
+

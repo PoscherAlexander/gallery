@@ -113,7 +113,7 @@ $a = InitAlbum();
             </section>
 
             <section class="uk-margin uk-align-center uk-text-center">
-                <a class="uk-button uk-button-default" href="#modalDeleteAlbum" uk-toggle>Delete Album</a>
+                <?php if(isset($_SESSION['id'])) echo '<a class="uk-button uk-button-default" href="#modalDeleteAlbum" id="#buttonDeleteAlbum" uk-toggle>Delete Album</a>'; ?>
             </section>
 
             <!-- MODALS -->
