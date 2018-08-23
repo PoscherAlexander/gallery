@@ -79,3 +79,17 @@ function FireNotification(info)
         });
     }
 }
+
+function DownloadFile(file)
+{
+    var album = document.getElementById('content').getAttribute('name');
+
+    $.ajax({
+        type: "POST",
+        url: '../../php/Download.inc.php',
+        data: {file: file, album: album},
+        success: function(){
+            ;
+        }
+    });
+}

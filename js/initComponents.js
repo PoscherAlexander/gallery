@@ -30,7 +30,7 @@ function InitIconLinks(code)
             var caption = document.getElementById('lightboxCaption').innerHTML;
             document.getElementById('lightboxDelete').setAttribute('onclick', 'OpenDeleteModal(\'' + caption + '\');');
             document.getElementById('lightboxShare').setAttribute('data-href', 'share.php/?n=' + caption);
-            document.getElementById('lightboxDownload').setAttribute('data-href', 'download.php/?n=' + caption);
+            document.getElementById('lightboxDownload').setAttribute('href', '../../php/download/?file=' + caption + '&album=' + document.getElementById('content').getAttribute('name'));
 
             $.ajax({
                 type: "POST",

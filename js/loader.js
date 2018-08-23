@@ -52,3 +52,17 @@ function LoadAlbums()
     xmlhttp.open('POST','php/GetAlbums.inc.php',true);
     xmlhttp.send();
 }
+
+function Setup()
+{
+    $.ajax({
+        type: "POST",
+        url: 'php/CheckSetup.inc.php',
+        success: function(ret){
+            if(ret == 1)
+            {
+                UIkit.modal('#modalSetup').show();
+            }
+        }
+    });
+}

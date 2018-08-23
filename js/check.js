@@ -71,6 +71,65 @@ function CheckLogin()
     return false;
 }
 
+function DoSetup()
+{
+    var username = document.getElementById('txtSetupUsername').value;
+    var password = document.getElementById('txtSetupPassword').value;
+    var passwordRetype = document.getElementById('txtSetupPasswordRetype').value;
+
+    document.getElementById("txtSetupUsernameFeedback").innerHTML = '';
+    document.getElementById('txtSetupUsername').classList.remove('uk-form-danger');
+    document.getElementById("txtSetupPasswordFeedback").innerHTML = '';
+    document.getElementById('txtSetupPassword').classList.remove('uk-form-danger');
+    document.getElementById("txtSetupPasswordRetypeFeedback").innerHTML = '';
+    document.getElementById('txtSetupPasswordRetype').classList.remove('uk-form-danger');
+
+    var url = 'php/Setup.inc.php';
+
+    if(IsFieldEmpty(username))
+    {
+        document.getElementById("txtSetupUsernameFeedback").innerHTML = 'Please enter a username.';
+        document.getElementById('txtSetupUsername').className += ' uk-form-danger';
+        return false;
+    }
+    else if(IsFieldEmpty(password))
+    {
+        document.getElementById("txtSetupPasswordFeedback").innerHTML = 'Please enter a password.';
+        document.getElementById('txtSetupPassword').className += ' uk-form-danger';
+        return false;
+    }
+    else if(IsFieldEmpty(passwordRetype))
+    {
+        document.getElementById("txtSetupPasswordRetypeFeedback").innerHTML = 'Please retype your password.';
+        document.getElementById('txtSetupPasswordRetype').className += ' uk-form-danger';
+        return false;
+    }
+    else if(!ValidUsernameCharacters(username))
+    {
+        document.getElementById("txtSetupUsernameFeedback").innerHTML = 'Please don\'t use invalid characters. (e.g.: !+*#@.)';
+        document.getElementById('txtSetupUsername').className += ' uk-form-danger';
+        return false;
+    }
+    else if(!PasswordMatch(password, passwordRetype))
+    {
+        document.getElementById("txtSetupPasswordFeedback").innerHTML = 'The Passwords don\'t match.';
+        document.getElementById('txtSetupPassword').className += ' uk-form-danger';
+        document.getElementById('txtSetupPasswordRetype').className += ' uk-form-danger';
+        return false;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: url,
+        data: {username: username, password: password},
+        success: function(){
+            ;
+        }
+    });
+
+
+}
+
 function ValidAlbumCharacters(name)
 {
     var re = /^[a-zA-Z0-9\s]*$/;
@@ -81,6 +140,11 @@ function ValidUsernameCharacters(name)
 {
     var re = /^[a-zA-Z0-9]*$/;
     return re.test(name);
+}
+
+function PasswordMatch(password1, password2)
+{
+    return password1 == password2;
 }
 
 function IsFieldEmpty(content)

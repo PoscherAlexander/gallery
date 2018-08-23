@@ -17,7 +17,7 @@
         <script src="js/login.js"></script>
 
     </head>
-    <body onload="LoadAlbums()">
+    <body onload="LoadAlbums(); Setup();">
 		
 		<div class="loader">
 			<div class="uk-flex uk-flex-middle uk-flex-center" uk-height-viewport>
@@ -63,7 +63,7 @@
 
             <section id="footer">
                 <div class="uk-container uk-text-center">
-                    <div class="ph-heading-logo uk-margin-top"><p>&copy; You</p></div>
+                    <div class="ph-heading-logo uk-margin-top"><p>&copy; Alex Poscher</p></div>
                 </div>
             </section>
 
@@ -121,6 +121,49 @@
                         <div class="uk-modal-footer uk-text-right">
                             <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
                             <button class="uk-button uk-button-primary" type="submit" id="modalLoginSubmit">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div id="modalSetup" class="uk-flex-top" uk-modal>
+                <div class="uk-modal-dialog uk-margin-auto-vertical">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Setup</h2>
+                    </div>
+                    <form class="uk-form-stacked" action="." onsubmit="return DoSetup();" method="POST" id="frmSetup">
+                        <div class="uk-modal-body">
+                            <div class="uk-margin">
+                                <p>Set the username and password for your gallery.</p>
+                            </div>
+                            <div class="uk-margin">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" type="text" name="txtSetupUsername" id="txtSetupUsername" placeholder="Username">
+                                </div>
+                                <div class="uk-margin-small">
+                                    <div class="uk-form-label uk-form-feedback" id="txtSetupUsernameFeedback"></div>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" type="password" name="txtSetupPassword" id="txtSetupPassword" placeholder="Password">
+                                </div>
+                                <div class="uk-margin-small">
+                                    <div class="uk-form-label uk-form-feedback" id="txtSetupPasswordFeedback"></div>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" type="password" name="txtSetupPasswordRetype" id="txtSetupPasswordRetype" placeholder="Retype Password">
+                                </div>
+                                <div class="uk-margin-small">
+                                    <div class="uk-form-label uk-form-feedback" id="txtSetupPasswordRetypeFeedback"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-modal-footer uk-text-right">
+                            <button class="uk-button uk-button-primary" type="submit" id="modalSetupSubmit">Setup</button>
                         </div>
                     </form>
                 </div>
