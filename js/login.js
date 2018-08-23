@@ -13,9 +13,6 @@ $(window).on('load',function() {
                     document.getElementById('loginButton').innerHTML = '<span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGOUT';
                     document.getElementById('loginButton').setAttribute('onclick', 'Logout(\'home\');');
                     document.getElementById('loginButton').removeAttribute('href');
-                    setTimeout(function () {
-                        document.getElementById('cardNewAlbum').hidden = false;
-                    }, 1);
                 }
                 else {
                     document.getElementById('loginButton').innerHTML = '<span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGOUT';
