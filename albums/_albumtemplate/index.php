@@ -45,7 +45,7 @@ $a = InitAlbum();
 			</div>
 		</div>
 
-        <div id="content" name="<?php echo $a->getPath(); ?>">
+        <div id="content" name="<?php echo $a->getPath(); ?>" hidden>
             <header>
                 <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading uk-inline" style="background-image: url(<?php echo 'images/' . $a->getThumbnail(); ?>);" uk-height-viewport="offset-bottom:35" id="backgroundpicture">
 

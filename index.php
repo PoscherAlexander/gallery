@@ -27,7 +27,7 @@
 			</div>
 		</div>
 
-        <div id="content" name="_home">
+        <div id="content" name="_home" hidden>
             <header>
                 <div class="uk-flex uk-flex-center uk-flex-middle uk-background uk-background-cover uk-background-center-center ph-background-heading uk-inline" style="background-image: url(img/forest.jpg);" uk-height-viewport>
 

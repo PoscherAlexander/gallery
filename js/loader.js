@@ -18,7 +18,7 @@ function LoadImages()
         {           
             document.getElementById("photoarea").innerHTML=xmlhttp.responseText;
             $('.imageLoader').fadeOut('slow');
-            document.getElementById('content').style.display = 'block';
+            document.getElementById('content').hidden = false;
         }
     }
 
@@ -45,7 +45,7 @@ function LoadAlbums()
         {
             document.getElementById("albumcollection").innerHTML=xmlhttp.responseText;
             $('.albumLoader').fadeOut('slow');
-            document.getElementById('content').style.display = 'block';
+            document.getElementById('content').hidden = false;
         }
     }
 

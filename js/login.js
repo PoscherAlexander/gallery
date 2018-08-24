@@ -13,11 +13,13 @@ $(window).on('load',function() {
                     document.getElementById('loginButton').innerHTML = '<span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGOUT';
                     document.getElementById('loginButton').setAttribute('onclick', 'Logout(\'home\');');
                     document.getElementById('loginButton').removeAttribute('href');
+                    document.getElementById('loginButton').removeAttribute('uk-toggle');
                 }
                 else {
                     document.getElementById('loginButton').innerHTML = '<span data-uk-icon="icon: user; ratio: 1.3;"></span> LOGOUT';
                     document.getElementById('loginButton').setAttribute('onclick', 'Logout(\'album\');');
                     document.getElementById('loginButton').removeAttribute('href');
+                    document.getElementById('loginButton').removeAttribute('uk-toggle');
                     document.getElementById('addPictures').hidden = false;
                 }
             }
