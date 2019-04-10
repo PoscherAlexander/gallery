@@ -4,12 +4,11 @@
         <title>Photo Gallery</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdn.poscher.me/uikit/3.0.0/css/uikit.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/css/uikit.min.css" />
         <link rel="stylesheet" href="css/main.css" />
         <link rel="stylesheet" href="css/albums.css" />
-        <script src="https://cdn.poscher.me/uikit/3.0.0/js/uikit.min.js"></script>
-		<script src="https://cdn.poscher.me/uikit/3.0.0/js/uikit-icons.min.js"></script>
-		<!--<script src="https://cdn.poscher.me/jquery/jquery-3.3.1.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.3/js/uikit-icons.min.js"></script>
 		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/loader.js"></script>
