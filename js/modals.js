@@ -65,7 +65,7 @@ function FireNotification(info)
     if(info[0] == 'del')
     {
         UIkit.notification({
-            message: '<span uk-icon=\'icon: trash\'></span> Deleted ' + info[2],
+            message: '<span uk-icon=\'icon: trash\'></span> Deleted "' + info[2]+ '"',
             status: 'primary',
             pos: 'bottom-left',
         });
